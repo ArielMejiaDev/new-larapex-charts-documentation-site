@@ -20,27 +20,7 @@ features:
 
 Agrega hermosas graficas con un facade.
 
-<div class="flex flex-col lg:flex-row">
-
-<div class="text-sm font-semibold flex items-center p-6 shadow rounded bg-gradient-to-r from-yellow-400 to-pink-500 text-white w-full lg:w-1/2 lg:mr-1 my-2 lg:my-0 hover:shadow-lg">
-
-  <div class="text-white mr-2">
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
-  </div>
-
-  <div>Una API fluida para manipular la librería apex chart JS.</div>
-</div>
-
-<div class="text-sm font-semibold flex items-center p-6 shadow rounded bg-gradient-to-r from-green-400 to-blue-500 text-white w-full lg:w-1/2 lg:ml-1 my-2 lg:my-0 hover:shadow-lg">
-
-  <div class="text-white mr-2">
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-  </div>
-
-  <div>Interactua con el Facade o la clase del paquete directamente.</div>
-</div>
-
-</div>
+<cards language="spanish"></cards>
 
 ## Graficas disponibles
 
