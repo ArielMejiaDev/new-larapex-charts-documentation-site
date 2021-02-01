@@ -23,12 +23,12 @@ Puedes hacer una donación con:
 
 ### Aquí una lista de paquetes que mantengo:
 
-📦 <strong class="ml-3">LarapexCharts</strong> (paquete de Laravel para crear gráficos escribiendo solo PHP).
+📦 <strong class="ml-3">LarapexCharts</strong> <a href="https://larapex-charts.netlify.app/" target="_blank">paquete de Laravel para crear gráficos escribiendo solo PHP.</a>
 
-📦 <strong class="ml-3">Laravel JsonApiAuth</strong> (paquete de Laravel para agregar un scaffold de autenticación para APIs usando los paquetes oficiales Laravel Passport o Laravel Sanctum).
+📦 <strong class="ml-3">Laravel JsonApiAuth</strong> <a href="https://json-api-auth.netlify.app/" target="_blank">paquete de Laravel para agregar un scaffold de autenticación para APIs usando los paquetes oficiales Laravel Passport o Laravel Sanctum.</a>
 
-📦 <strong class="ml-3">InertiaJS Error Page</strong> (paquete de Laravel para agregar una hermosa página de error con TailwindCSS sin el modo de error predeterminado (modal) de InertiaJS para ambientes de producción).
+📦 <strong class="ml-3">InertiaJS Error Page</strong> <a href="https://packagist.org/packages/arielmejiadev/inertiajs-error-page" target="_blank">paquete de Laravel para agregar una hermosa página de error con TailwindCSS sin el modo de error predeterminado (modal) de InertiaJS para ambientes de producción.</a>
 
-📦 <strong class="ml-3">Laravel PagaloGT</strong> (paquete de Laravel para agregar pagos con la pasarela PagaloGT).
+📦 <strong class="ml-3">Laravel PagaloGT</strong> <a href="https://packagist.org/packages/arielmejiadev/pagalogt" target="_blank">paquete de Laravel para agregar pagos con la pasarela PagaloGT.</a>
 
 Actualmente estoy trabajando en algunos paquetes relacionados con InertiaJS y APIs, si encuentras algún paquete útil, considera hacer una donación.

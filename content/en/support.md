@@ -23,12 +23,13 @@ You can make a donation with:
 
 ### Here a list of packages that I maintain:
 
-📦 <strong class="ml-3">LarapexCharts</strong> (Laravel package to create charts writing only PHP).
+📦 <strong class="mx-3">LarapexCharts</strong> <a href="https://larapex-charts.netlify.app/" target="_blank">Laravel package to create charts writing only PHP.</a>
 
-📦 <strong class="ml-3">Laravel JsonApiAuth</strong> (Laravel package to add authentication scaffold for APIs using Official packages Laravel Passport or Laravel Sanctum).
+📦 <strong class="ml-3">Laravel JsonApiAuth</strong> <a href="https://json-api-auth.netlify.app/" target="_blank">Laravel package to add authentication scaffold for APIs using Official packages Laravel Passport or Laravel Sanctum.</a>
 
-📦 <strong class="ml-3">InertiaJS Error Page</strong> (Laravel package to add beautiful error page with TailwindCSS without InertiaJS default error modal for production).
+📦 <strong class="ml-3">InertiaJS Error Page</strong> <a href="https://packagist.org/packages/arielmejiadev/inertiajs-error-page" target="_blank">Laravel package to add beautiful error page with TailwindCSS without InertiaJS default error modal for production.</a>
 
-📦 <strong class="ml-3">Laravel PagaloGT</strong> (Laravel package to add payments with PagaloGT gateway).
+📦 <strong class="ml-3">Laravel PagaloGT</strong> <a href="https://packagist.org/packages/arielmejiadev/pagalogt" target="_blank">Laravel package to add payments with PagaloGT gateway.</a>
+
 
 I am currently working on some packages related to InertiaJS and APIs, if you find some package useful please consider to donate.
