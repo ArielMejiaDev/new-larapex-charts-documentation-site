@@ -1,122 +1,86 @@
 ---
 title: Ejemplo simple
 description: 'Agrega hermosas gráficas a tu proyecto en Laravel con solo un facade.'
-position: 4
+position: 3
 category: 'Ejemplos'
 ---
 
-## Paso 1 
+#### Retornado una vista con un chart
 
-#### Agrega una ruta a tu proyecto.
+```php[routes/web.php]
+use ArielMejiaDev\LarapexCharts\LarapexChart;
 
-En este ejemplo se agregará una ruta `chart`:
-
-```php
-Route::get('chart', function(){
-    //
-});
-```
-
-## Paso 2 
-
-#### Usando la clase del paquete
-
-```php
-Route::get('chart', function(){
-    $chart = new LarapexChart();
-    $chart->setTitle('Users')->setXAxis(['Active', 'Guests'])->setDataset([100, 200]);
-});
-```
-
-## Paso 3 
-
-#### Retorna una vista con la gráfica
-
-```php
 Route::get('chart', function () {
-    $chart = (new LarapexChart)->setTitle('Users')->setXAxis(['Active', 'Guests'])->setDataset([100, 200]);
+
+    $chart = (new LarapexChart)->pieChart()
+        ->setTitle('Top 3 scorers of the team.')
+        ->setSubtitle('Season 2021.')
+        ->addData([40, 50, 30])
+        ->setLabels(['Player 7', 'Player 10', 'Player 9']);
+    
+    return view('chart', compact('chart'));
+}); 
+```
+
+También puedes crear charts usando el facade:
+
+```php[routes/web.php]
+use LarapexChart;
+
+Route::get('chart', function () {
+
+    $chart = LarapexChart::pieChart()
+        ->setTitle('Top 3 scorers of the team.')
+        ->setSubtitle('Season 2021.')
+        ->addData([40, 50, 30])
+        ->setLabels(['Player 7', 'Player 10', 'Player 9']);
+    
     return view('chart', compact('chart'));
 }); 
 ```
 
 <alert type="danger">
 
-Importante
-
-Debes haber creado previamente la vista en el directorio `resources/views`.
+Debes crear una vista en el directorio `resources/views`.
 
 </alert>
 
-## Paso 4 
+#### Agrega un chart a la vista
 
-#### Agrega la gráfica a la vista
-
-```php
+```php[resources/views/chart.blade.php]
 <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Chart Sample</title>
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart Sample</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen bg-gray-100">
 
-    {!! $chart->container() !!}
+<div class="container px-4 mx-auto">
 
-    <script src="{{ $chart->cdn() }}"></script>
+    <div class="p-6 m-20 bg-white rounded shadow">
+        {!! $chart->container() !!}
+    </div>
 
-    <!-- O usa el cdn directamente de jsdelivr -->
+</div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+<script src="{{ LarapexChart::cdn() }}"></script>
 
-    <!-- O usa el archivo publicado por el paquete -->
+<!-- O puedes usar directamente el cdn 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+-->
 
-    <!-- <script src="{{ asset('vendor/larapex-charts/apexchart.js') }}"></script> -->
+<!-- O puedes usar el archivo local que publica el paquete en el directorio public/vendor
+    <script src="{{ asset('vendor/larapex-charts/apexchart.js') }}"></script> 
+-->
 
-    {{ $chart->script() }}
-    </body>
+{{ $chart->script() }}
+</body>
 </html>
 ```
 
-## Métodos Helpers
-
-Todas las instancias del objeto `chart` cuentan con algunos metodos helpers:
-
-* container()
-* cdn()
-* script()
-
-Puedes usar estos helpers en tus vistas blade para renderizar las gráficas.
-
-### Método container
-
-Retorna un tag HTML `div` con un id generado, este id es unico en cada instancia de la clase `chart`, y debe coincidir con el id del objeto `chart`, (el paquete maneja todo esto de forma automatica por ti).
-
-### Método cdn()
-
-Retorna la dirección `Http` del `cdn` de la librería para renderizar las gráficas, si prefieres
-puedes almacenar una versión de la librería en el servidor, publicando los archivos del paquete, 
-este se publicara en el directorio `public/vendor`, solo debes ejectuar el comando:
-
-```php
-php artisan vendor:publish 
-```
-
-Y seleccionar la librería y presionar `enter`. (El número puede variar en tu proyecto):
-
-```php
-[11] Tag: larapex-charts-apexcharts-script 
-```
-
-Con este cambio en tus archivos blade puedes sustituir el metodo `cdn()` por la librería en el servidor:
-
-```php
-<!-- Replace this <script src="{{ $chart->cdn() }}"></script> -->
-<script src="{{ asset('vendor/larapex-charts/apexchart.js') }}"></script>
-```
-
-### Método script()
-
-Retorna un script con el objeto JSON que construye la gráfica por nosotros.
+<pie-chart></pie-chart>

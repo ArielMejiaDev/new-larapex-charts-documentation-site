@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.8.0",
-    "nuxt": "^2.14.7"
+    "apexcharts": "^3.24.0",
+    "nuxt": "^2.14.7",
+    "vue-apexcharts": "^1.6.0"
   }
 }

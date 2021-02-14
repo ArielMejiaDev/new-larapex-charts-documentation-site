@@ -2,7 +2,7 @@ import theme from '@nuxt/content-theme-docs'
 
 export default theme({
   docs: {
-    primaryColor: '#E24F55'
+    primaryColor: '#53B6B1'
   },
   i18n: {
     locales: () => [{
@@ -24,5 +24,5 @@ export default theme({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
-  target: 'static'
+  target: 'static',
 })
