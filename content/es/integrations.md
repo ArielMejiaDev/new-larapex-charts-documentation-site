@@ -21,6 +21,9 @@ Tambien puedes usar InertiaJS para hidratar componentes Vue con datos directamen
 
 ```bash[terminal/cmd]
 npm install --save apexcharts
+```
+
+```bash[terminal/cmd]
 npm install --save vue-apexcharts
 ```
 
@@ -37,6 +40,9 @@ Vue.component('apexchart', VueApexCharts)
 
 ```bash[terminal/cmd]
 npm install --save apexcharts
+```
+
+```bash[terminal/cmd]
 npm install --save vue3-apexcharts
 ```
 
