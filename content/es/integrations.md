@@ -65,7 +65,7 @@ $chart = (new ArielMejiaDev\LarapexCharts\LarapexChart())->areaChart()
     ->toVue();
 
 // An example using Eloquent
-$chart = (new LarapexChart)->areaChart()
+$chart = (new ArielMejiaDev\LarapexCharts\LarapexChart())->areaChart()
     ->setTitle('Users')
     ->addArea('Active users', \App\Models\User::query()->inRandomOrder()->limit(6)->pluck('id')->toArray())
     ->addArea('Inactive users', \App\Models\User::query()->inRandomOrder()->limit(6)->pluck('id')->toArray())
