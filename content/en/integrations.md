@@ -15,13 +15,13 @@ You can response an Http request, (typically with ajax, fetch or axios) from Vue
 
 Also you can use InertiaJS to hidrate Vue components with data directly from a controller.
 
-### First install the npm integration
-
-#### Working with Vue 2:
+### First install apexchart using npm
 
 ```bash[terminal/cmd]
 npm install --save apexcharts
 ```
+
+#### Vue 2 Adapter (to work with Vue 2):
 
 ```bash[terminal/cmd]
 npm install --save vue-apexcharts
@@ -31,16 +31,13 @@ Add the component to `resources/js/app.js` file:
 
 ```js[resources/js/app.js]
 import VueApexCharts from 'vue-apexcharts'
+
 Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 ```
 
-#### Working with Vue 3:
-
-```bash[terminal/cmd]
-npm install --save apexcharts
-```
+#### Vue 3 Adapter (working on Vue 3):
 
 ```bash[terminal/cmd]
 npm install --save vue3-apexcharts
@@ -51,8 +48,7 @@ Add the component to `resources/js/app.js` file:
 ```js[resources/js/app.js]
 import VueApexCharts from "vue3-apexcharts";
 
-const app = createApp(App);
-app.use(VueApexCharts);
+createApp({...}).use(VueApexCharts)
 ```
 
 ### Create a chart and use `toVue()` method
@@ -60,6 +56,15 @@ app.use(VueApexCharts);
 Then hidrate the component with the chart data.
 
 ```php[php]
+// Simple example
+$chart = (new ArielMejiaDev\LarapexCharts\LarapexChart())->areaChart()
+    ->setTitle('Users')
+    ->addArea('Active users', [10, 30, 25])
+    ->addArea('Inactive users', [5, 15, 35])
+    ->setColors(['#ffc63b', '#ff6384'])
+    ->toVue();
+
+// An example using Eloquent
 $chart = (new LarapexChart)->areaChart()
     ->setTitle('Users')
     ->addArea('Active users', \App\Models\User::query()->inRandomOrder()->limit(6)->pluck('id')->toArray())
@@ -67,7 +72,7 @@ $chart = (new LarapexChart)->areaChart()
     ->setColors(['#ffc63b', '#ff6384'])
     ->toVue();
 
-return Inertia::render('ChartsComponent', compact('chart'));
+return Inertia::render('Chart', compact('chart'));
 ```
 
 ### Render the chart on a Vue component
@@ -94,7 +99,7 @@ return Inertia::render('ChartsComponent', compact('chart'));
 
 ## Integrations with other Javascript frameworks
 
-You can responde to a request with a chart object, to be consumed by any other Javascript framework like ReactJS, Angular or even vainilla JS by using the method `toJson()`
+You can respond to a request with a chart object, to be consumed by any other Javascript framework like ReactJS, Angular or even vainilla JS by using the method `toJson()`
 
 ```php[php]
 $chart = (new LarapexChart)->pieChart()

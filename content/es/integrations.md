@@ -15,13 +15,13 @@ Puedes responder desde un endpoint a una petición Http (típicamente por ajax, 
 
 Tambien puedes usar InertiaJS para hidratar componentes Vue con datos directamente desde un controlador de Laravel..
 
-### Primero instala la integración de NPM.
-
-#### Trabajando con Vue 2:
+### Instala apexchart usando npm
 
 ```bash[terminal/cmd]
 npm install --save apexcharts
 ```
+
+#### Adaptador de Vue 2 (si trabajas con Vue 2):
 
 ```bash[terminal/cmd]
 npm install --save vue-apexcharts
@@ -31,16 +31,13 @@ Agrega el componente al archivo `resources/js/app.js`:
 
 ```js[resources/js/app.js]
 import VueApexCharts from 'vue-apexcharts'
+
 Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 ```
 
-#### Trabajando con Vue 3:
-
-```bash[terminal/cmd]
-npm install --save apexcharts
-```
+#### Adaptador de Vue 3 (trabajando con Vue 3):
 
 ```bash[terminal/cmd]
 npm install --save vue3-apexcharts
@@ -51,8 +48,7 @@ Agrega el componente al archivo `resources/js/app.js`:
 ```js[resources/js/app.js]
 import VueApexCharts from "vue3-apexcharts";
 
-const app = createApp(App);
-app.use(VueApexCharts);
+createApp({...}).use(VueApexCharts)
 ```
 
 ### Crea un chart y usa el método `toVue()`:
@@ -60,6 +56,15 @@ app.use(VueApexCharts);
 Hidrata el componente pasandole datos, en este caso el chart.
 
 ```php[php]
+// Simple example
+$chart = (new ArielMejiaDev\LarapexCharts\LarapexChart())->areaChart()
+    ->setTitle('Users')
+    ->addArea('Active users', [10, 30, 25])
+    ->addArea('Inactive users', [5, 15, 35])
+    ->setColors(['#ffc63b', '#ff6384'])
+    ->toVue();
+
+// An example using Eloquent
 $chart = (new LarapexChart)->areaChart()
     ->setTitle('Users')
     ->addArea('Active users', \App\Models\User::query()->inRandomOrder()->limit(6)->pluck('id')->toArray())
@@ -67,7 +72,7 @@ $chart = (new LarapexChart)->areaChart()
     ->setColors(['#ffc63b', '#ff6384'])
     ->toVue();
 
-return Inertia::render('ChartsComponent', compact('chart'));
+return Inertia::render('Chart', compact('chart'));
 ```
 
 ### Renderiza el chart en un componente Vue
