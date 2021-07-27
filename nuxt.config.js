@@ -5,12 +5,8 @@ export default theme({
     primaryColor: '#53B6B1'
   },
   i18n: {
-    locales: () => [{
-      code: 'es',
-      iso: 'es-ES',
-      file: 'es-ES.js',
-      name: 'Español'
-    }, {
+    locales: () => [
+    {
       code: 'en',
       iso: 'en-US',
       file: 'en-US.js',
