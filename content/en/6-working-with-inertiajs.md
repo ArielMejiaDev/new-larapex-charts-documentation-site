@@ -70,13 +70,15 @@ On any controller
 ```php
 public function index(MonthlyUsersChart $chart)
 {
-    return Inertia::render('Chart', ['chart' => $chart->build()]);
+    return Inertia::render('Users/Index', ['chart' => $chart->build()]);
 }
 ```
 
 ### Render the chart on a Vue component
 
-```vue[resources/js/Pages/Chart.vue]
+You can use options API:
+
+```vue[resources/js/Pages/Users/Index.vue]
 <template>
     <div>
         <apexchart :width="chart.width" :height="chart.height" :type="chart.type" :options="chart.options" :series="chart.series"></apexchart>
@@ -89,6 +91,22 @@ public function index(MonthlyUsersChart $chart)
             chart: Object
         }
     }
+</script>
+```
+
+Or choose composition API
+
+```vue[resources/js/Pages/Users/Index.vue]
+<template>
+    <div>
+        <apexchart :width="chart.width" :height="chart.height" :type="chart.type" :options="chart.options" :series="chart.series"></apexchart>
+    </div>
+</template>
+
+<script setup>
+    const props = defineProps({
+        chart: Object,
+    })
 </script>
 ```
 

@@ -91,7 +91,7 @@ Copy and paste this layout, it is using tailwindcss, but you can use any css sty
 
 It adds `$chart->container()`, `$chart->cdn()` and `$chart->script()` methods, to render a chart.
 
-```php[resources/views/chart.blade.php]
+```php[resources/views/users/index.blade.php]
 <!doctype html>
 <html lang="en">
 <head>

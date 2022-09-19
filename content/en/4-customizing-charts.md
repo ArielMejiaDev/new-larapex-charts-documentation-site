@@ -42,7 +42,7 @@ The `setColors` method accepts an array with hexadecimal colors as strings.
 
 ## Customize Fonts
 
-To customize font family and font color you can use:
+The default font in the package is `Helvetica`, but you can customize font family and font color:
 
 ```php[php]
 return $this->chart->lineChart()
@@ -58,7 +58,7 @@ return $this->chart->lineChart()
 
 <custom-font-line-chart></custom-font-line-chart>
 
-## setGrid() method
+## Customize Chart Grid
 
 The `setGrid()` method is available for:
 
@@ -89,12 +89,12 @@ return $this->chart->areaChart()
     ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
     ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
     ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
-    ->setGrid(false, '#3F51B5', 0.1);
+    ->setGrid('#3F51B5', 0.1);
 ```
 
 <custom-second-area-chart></custom-second-area-chart>
 
-## setMarkers() method
+## Customize Chart Markers
 
 In this version you are able to customize the markers of every chart graph.
 
@@ -112,7 +112,7 @@ return $this->chart->areaChart()
 
 <custom-third-area-chart></custom-third-area-chart>
 
-## setDataLabels method
+## Set Data Labels
 
 You can add labels on chart markers to show all the time the value of every series of data.
 
@@ -129,3 +129,16 @@ return $this->chart->areaChart()
 ```
 
 <custom-fourth-area-chart></custom-fourth-area-chart>
+
+## Set Sparkline
+
+You can remove the X and Y Axes and grid to get a pretty clean chart (very popular for cards & little table charts).
+
+```php[php]
+return $this->chart->lineChart()
+    ->addData('Published posts', [4, 9, 5, 2, 1, 8])
+    ->setSparkline();
+```
+
+<!-- Here add a Sparklines chart -->
+<custom-sparklines-line-chart></custom-sparklines-line-chart>

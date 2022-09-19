@@ -1,7 +1,7 @@
 ---
 title: Support the project
 description: 'Add beautiful charts to your Laravel project with just one facade.'
-position: 9
+position: 10
 category: Support
 ---
 

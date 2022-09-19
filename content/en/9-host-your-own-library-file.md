@@ -1,7 +1,7 @@
 ---
 title: Host your own js library file
 description: 'Add beautiful charts to your Laravel project with just one facade.'
-position: 8
+position: 9
 category: 'Advance'
 ---
 
