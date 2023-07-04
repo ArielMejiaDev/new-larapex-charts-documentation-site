@@ -62,9 +62,9 @@ return $this->chart->lineChart()
 
 The `setGrid()` method is available for:
 
-* Line charts
-* Area charts
-* Bar charts
+* Line Charts
+* Area Charts
+* Bar Charts
 
 You can customize the style of the grid, here an example:
 
@@ -78,7 +78,7 @@ return $this->chart->areaChart()
     ->setGrid();
 ```
 
-<custom-first-area-chart></custom-first-area-chart>
+<custom-area-chart></custom-area-chart>
 
 By adding just the `setGrid()` method it adds a default style that would be enough in many cases, but you can even customize more the grid by passing some params:
 
@@ -92,7 +92,7 @@ return $this->chart->areaChart()
     ->setGrid('#3F51B5', 0.1);
 ```
 
-<custom-second-area-chart></custom-second-area-chart>
+<custom-grid-area-chart></custom-grid-area-chart>
 
 ## Customize Chart Markers
 
@@ -105,14 +105,14 @@ return $this->chart->areaChart()
     ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
     ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
     ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
-    ->setGrid(false, '#3F51B5', 0.1)
+    ->setGrid('#3F51B5', 0.1)
     ->setColors(['#FFC107', '#303F9F'])
     ->setMarkers(['#FF5722', '#E040FB'], 7, 10);
 ```
 
-<custom-third-area-chart></custom-third-area-chart>
+<custom-markers-area-chart></custom-markers-area-chart>
 
-## Set Data Labels
+## Customize Data Labels
 
 You can add labels on chart markers to show all the time the value of every series of data.
 
@@ -123,14 +123,14 @@ return $this->chart->areaChart()
     ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
     ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
     ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
-    ->setGrid(false, '#3F51B5', 0.1)
+    ->setGrid('#3F51B5', 0.1)
     ->setColors(['#FFC107', '#303F9F'])
     ->setMarkers(['#FF5722', '#E040FB'], 7, 10);
 ```
 
-<custom-fourth-area-chart></custom-fourth-area-chart>
+<custom-data-labels-area-chart></custom-data-labels-area-chart>
 
-## Set Sparkline
+## Sparkline Charts
 
 You can remove the X and Y Axes and grid to get a pretty clean chart (very popular for cards & little table charts).
 
@@ -141,4 +141,56 @@ return $this->chart->lineChart()
 ```
 
 <!-- Here add a Sparklines chart -->
-<custom-sparklines-line-chart></custom-sparklines-line-chart>
+<custom-sparkline-line-chart></custom-sparkline-line-chart>
+
+## Stacked Charts
+
+The `setStacked()` method is available for:
+
+* Line Charts
+* Area Charts
+* Bar Charts
+* Horizontal Bar Charts
+
+#### Line chart stacked:
+
+```php[php]
+return $this->chart->lineChart()
+    ->setTitle('Sales during 2021.')
+    ->setSubtitle('Physical sales vs Digital sales.')
+    ->addData('Published posts', [4, 9, 5, 2, 1, 8])
+    ->addData('Unpublished posts', [7, 2, 7, 2, 5, 4])
+    ->setColors(['#ffc63b', '#ff6384'])
+    ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
+    ->setStacked();
+```
+
+<custom-line-chart-stacked></custom-line-chart-stacked>
+
+#### Area chart stacked:
+
+```php[php]
+return $this->chart->areaChart()
+    ->setTitle('Sales during 2021.')
+    ->setSubtitle('Physical sales vs Digital sales.')
+    ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
+    ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
+    ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
+    ->setGrid();
+```
+
+<custom-area-chart-stacked></custom-area-chart-stacked>
+
+#### Bar chart stacked:
+
+```php[php]
+return $this->chart->barChart()
+    ->setTitle('San Francisco vs Boston.')
+    ->setSubtitle('Wins during season 2021.')
+    ->addData('San Francisco', [6, 9, 3, 4, 10, 8])
+    ->addData('Boston', [7, 3, 8, 2, 6, 4])
+    ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
+    ->setStacked();
+```
+
+<custom-bar-chart-stacked></custom-bar-chart-stacked>

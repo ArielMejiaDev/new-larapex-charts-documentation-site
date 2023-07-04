@@ -9,9 +9,9 @@ category: 'Introduction'
 
 <img src="/banner-dark.png" class="dark-img" width="1280" height="640" alt="Larapex Charts banner"/>
 
-Add beautiful charts for blade and VueJS components.
+Add beautiful charts for `Blade` or `VueJS` components.
 
-<downloads-celebration text="Larapex Charts already has more than 17,000 downloads."></downloads-celebration>
+<downloads-celebration text="Larapex Charts already has more than 100,000 downloads."></downloads-celebration>
 
 ## Installation
 

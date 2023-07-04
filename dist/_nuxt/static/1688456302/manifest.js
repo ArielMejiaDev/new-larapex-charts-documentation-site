@@ -1,0 +1,1 @@
+__NUXT_JSONP__("manifest.js", {routes:["\u002F","\u002Freleases","\u002F2-simple-example","\u002F3-more-charts","\u002F6-working-with-inertiajs","\u002F5-charts-with-eloquent","\u002F8-customize-chart-stubs","\u002F7-working-with-long-numbers","\u002F10-support","\u002F4-customizing-charts","\u002F9-host-your-own-library-file"]})
